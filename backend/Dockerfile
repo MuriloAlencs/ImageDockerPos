@@ -1,9 +1,9 @@
 FROM python:3.8-alpine
 WORKDIR /app/backend
-COPY backend/requirements.txt .
-COPY backend/start-backend.sh .
-COPY backend/run.py .
+COPY requirements.txt .
+COPY start-backend.sh .
+COPY run.py .
 RUN apk add --no-cache python3 py3-pip && \
     pip3 install --no-cache-dir -r requirements.txt
 EXPOSE 5000
-CMD ["sh", "./backend/start-backend.sh"]
+CMD ["sh", "./start-backend.sh"]
